@@ -113,7 +113,7 @@ Note: This project was done as part of an assignment in college for networking h
 project the output of the weather station goes to a raspberrypi web server and also to the https://thingspeak.com/ interface.
 
 Details of my webserver configuration can be found here:
-
+https://github.com/Berncat/weatherpi-server
 
 Tutorials for using ThingSpeak can be found here:
 https://uk.mathworks.com/help/thingspeak/getting-started-with-thingspeak.html
