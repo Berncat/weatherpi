@@ -77,8 +77,6 @@ wind_readings = []
 rain_readings = []
 
 # This is the function which willcollect the reading every 60 seconds and append to a list
-
-
 def get_data():
     # This is to burn the first few readings from the sensors as first readings can be inaccurate
     for _ in range(5):
@@ -97,8 +95,6 @@ def get_data():
     print('1 minute reading:', time.strftime("%H:%M:%S", time.gmtime()))
 
 # This function gets the average of the lists for the main 15 minute output
-
-
 def get_average():
     output.update(
         _id=time.strftime("%H:%M", time.gmtime()),
@@ -114,8 +110,6 @@ def get_average():
     )
 
 # This function clears all the lists
-
-
 def clear_readings():
     temperature_readings.clear()
     humidity_readings.clear()
@@ -126,8 +120,6 @@ def clear_readings():
     rain_readings.clear()
 
 # This function is to create a list file which can then be accessed by the thingspeak script to update thingspeak
-
-
 def thingspeak():
     list_file = open("list.py", "w")
 
@@ -158,7 +150,7 @@ if __name__ == '__main__':
             get_data()
             check = 1
         # every 15 minutes average the readings and create an output
-        if time.gmtime().tm_min % 2 == 0 and check != 2:
+        if time.gmtime().tm_min % 15 == 0 and check != 2:
             get_average()
             print(output)
             udp(output)
