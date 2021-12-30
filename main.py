@@ -98,7 +98,7 @@ def get_data():
 def get_average():
     output.update(
         _id=time.strftime("%H:%M", time.gmtime()),
-        date=time.strftime("%a %d %b %Y", time.gmtime()),
+        date=time.strftime("%d-%m-%Y", time.gmtime()),
         temperature=round(statistics.mean(temperature_readings), 2),
         humidity=round(statistics.mean(humidity_readings), 2),
         pressure=round(statistics.mean(pressure_readings), 2),
